@@ -8,6 +8,10 @@
 
 import Foundation
 
+public struct HomeResponse {
+    let widgets: [HomeWidgetModel]
+}
+
 enum HomeWidgetModel {
     case header([HomeHeaderWidgetModel])
     case card([HomeCardWidgetModel])
@@ -68,6 +72,3 @@ extension HomeWidgetModel: Codable {
 
 }
 
-public struct HomeResponse {
-    let widgets: [HomeWidgetModel]
-}

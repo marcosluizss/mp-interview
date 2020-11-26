@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Exibe a tela por meio do código e não pelo storyboardh
         let window = UIWindow(windowScene: windowScene)
         //view que irá ser exibida na tela
-        let homeViewController = HomeController()
+        let homeViewController = HomeViewController()
         let navigationController = UINavigationController(rootViewController: homeViewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
