@@ -19,7 +19,9 @@
 		85246950256F504400A81A66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694F256F504400A81A66 /* Constants.swift */; };
 		85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246951256F54E300A81A66 /* HomeViewModel.swift */; };
 		85246957256F561800A81A66 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246956256F561800A81A66 /* HomeModel.swift */; };
-		85246959256F5C8F00A81A66 /* HomeWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246958256F5C8F00A81A66 /* HomeWidgetModel.swift */; };
+		85246959256F5C8F00A81A66 /* HomeHeaderWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246958256F5C8F00A81A66 /* HomeHeaderWidgetModel.swift */; };
+		855233FA2570525700F1F952 /* HomeCardWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855233F92570525700F1F952 /* HomeCardWidgetModel.swift */; };
+		855233FC2570527400F1F952 /* HomeStatementWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855233FB2570527400F1F952 /* HomeStatementWidgetModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,9 @@
 		8524694F256F504400A81A66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85246951256F54E300A81A66 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		85246956256F561800A81A66 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		85246958256F5C8F00A81A66 /* HomeWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetModel.swift; sourceTree = "<group>"; };
+		85246958256F5C8F00A81A66 /* HomeHeaderWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidgetModel.swift; sourceTree = "<group>"; };
+		855233F92570525700F1F952 /* HomeCardWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetModel.swift; sourceTree = "<group>"; };
+		855233FB2570527400F1F952 /* HomeStatementWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				85246956256F561800A81A66 /* HomeModel.swift */,
-				85246958256F5C8F00A81A66 /* HomeWidgetModel.swift */,
+				85246958256F5C8F00A81A66 /* HomeHeaderWidgetModel.swift */,
+				855233F92570525700F1F952 /* HomeCardWidgetModel.swift */,
+				855233FB2570527400F1F952 /* HomeStatementWidgetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,10 +363,12 @@
 				85246914256F38F800A81A66 /* AppDelegate.swift in Sources */,
 				85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */,
 				8524694A256F46F800A81A66 /* BaseController.swift in Sources */,
-				85246959256F5C8F00A81A66 /* HomeWidgetModel.swift in Sources */,
+				85246959256F5C8F00A81A66 /* HomeHeaderWidgetModel.swift in Sources */,
 				85246916256F38F800A81A66 /* SceneDelegate.swift in Sources */,
+				855233FC2570527400F1F952 /* HomeStatementWidgetModel.swift in Sources */,
 				85246957256F561800A81A66 /* HomeModel.swift in Sources */,
 				8524694E256F494D00A81A66 /* HTTPService.swift in Sources */,
+				855233FA2570525700F1F952 /* HomeCardWidgetModel.swift in Sources */,
 				85246950256F504400A81A66 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

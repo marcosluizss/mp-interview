@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum HomeWidget {
-    case header([HomeHeaderWidget])
-    case card([HomeCardWidget])
-    case statement([HomeStatementWidget])
+enum HomeWidgetModel {
+    case header([HomeHeaderWidgetModel])
+    case card([HomeCardWidgetModel])
+    case statement([HomeStatementWidgetModel])
     case notDefined(String)
     
     enum identifier: String, Codable {
@@ -22,7 +22,7 @@ enum HomeWidget {
     }
 }
 
-extension HomeWidget: Codable {
+extension HomeWidgetModel: Codable {
     private enum CodingKeys: String, CodingKey {
         case identifier, widgets
     }
@@ -30,16 +30,16 @@ extension HomeWidget: Codable {
     // faz o decode de acordo com o tipo do widget passado no identfier
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let identifier = try container.decode(HomeWidget.identifier.self, forKey: .identifier)
+        let identifier = try container.decode(HomeWidgetModel.identifier.self, forKey: .identifier)
         switch identifier {
             case .header:
-                let items = try container.decode([HomeHeaderWidget].self, forKey: .widgets)
+                let items = try container.decode([HomeHeaderWidgetModel].self, forKey: .widgets)
                 self = .header(items)
             case .card:
-                let items = try container.decode([HomeCardWidget].self, forKey: .widgets)
+                let items = try container.decode([HomeCardWidgetModel].self, forKey: .widgets)
                 self = .card(items)
             case .statement:
-                let items = try container.decode([HomeStatementWidget].self, forKey: .widgets)
+                let items = try container.decode([HomeStatementWidgetModel].self, forKey: .widgets)
                 self = .statement(items)
             case .notDefined:
                 print("decode: Widget não definido \(identifier)")
@@ -53,13 +53,13 @@ extension HomeWidget: Codable {
         
         switch self {
         case .header(let attachment):
-            try container.encode(HomeWidget.identifier.header.rawValue, forKey: .identifier)
+            try container.encode(HomeWidgetModel.identifier.header.rawValue, forKey: .identifier)
             try container.encode(attachment, forKey: .widgets)
         case .card(let attachment):
-            try container.encode(HomeWidget.identifier.card.rawValue, forKey: .identifier)
+            try container.encode(HomeWidgetModel.identifier.card.rawValue, forKey: .identifier)
             try container.encode(attachment, forKey: .widgets)
         case .statement(let attachment):
-            try container.encode(HomeWidget.identifier.statement.rawValue, forKey: .identifier)
+            try container.encode(HomeWidgetModel.identifier.statement.rawValue, forKey: .identifier)
             try container.encode(attachment, forKey: .widgets)
         case .notDefined:
             print("encode: Widget não definido \(self)")
@@ -69,5 +69,5 @@ extension HomeWidget: Codable {
 }
 
 public struct HomeResponse {
-    let widgets: [HomeWidget]
+    let widgets: [HomeWidgetModel]
 }
