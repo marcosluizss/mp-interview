@@ -39,7 +39,7 @@ class HTTPService {
                 completionBlock(.failure(HTTPError.invalidResponse(responseData, urlResponse)))
                 return
             }
-            
+            //print(String(decoding: data, as: UTF8.self))
             completionBlock(.success(data))
         }
         task.resume()
