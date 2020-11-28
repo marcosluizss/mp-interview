@@ -29,15 +29,7 @@ class HomeViewController: BaseViewController {
     }()
     
     private var homeCardWidgetView : HomeCardWidgetView?
-    
     private var homeStatementWidgetView : HomeStatementWidgetView?
-    
-    private lazy var titleLabel2 : UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,11 +75,11 @@ class HomeViewController: BaseViewController {
     }
 
     private func createContraints(){
-        
+        let safeArea = view.layoutMarginsGuide
         self.stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
-        self.stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
-        self.stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50).isActive = true
+        self.stackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 10).isActive = true
+        self.stackView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -10).isActive = true
+        self.stackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10).isActive = true
         self.stackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
                 
         self.homeCardWidgetView?.translatesAutoresizingMaskIntoConstraints = false
@@ -100,11 +92,11 @@ extension HomeViewController : HomeCardButtonDelegate {
     func didPressButton(button: UIButton, value: String, action: ButtonActionIdentifier) {
         switch action {
         case .cardScreen:
-            let cardScreen = CardViewController()
+            let cardScreen = CardDetailViewController()
             cardScreen.cardId = value
             navigationController?.pushViewController(cardScreen, animated: true)
         case .statementScreen:
-            let statementScreen = StatementViewController()
+            let statementScreen = StatementDetailViewController()
             statementScreen.accountId = value
             navigationController?.pushViewController(statementScreen, animated: true)
         }

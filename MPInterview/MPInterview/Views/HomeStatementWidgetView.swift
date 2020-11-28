@@ -78,7 +78,9 @@ public class HomeStatementWidgetView : UIView {
         self.homeCardView.trailingAnchor.constraint(equalTo:self.trailingAnchor).isActive = true
         self.homeCardView.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
         
-        self.horizontalStack.translatesAutoresizingMaskIntoConstraints = false	
+        self.horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+        self.horizontalStack.leadingAnchor.constraint(equalTo:self.homeCardView.content.leadingAnchor).isActive = true
+        self.horizontalStack.trailingAnchor.constraint(equalTo:self.homeCardView.content.trailingAnchor).isActive = true
     }
     
 }

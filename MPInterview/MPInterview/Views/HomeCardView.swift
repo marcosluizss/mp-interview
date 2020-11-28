@@ -13,20 +13,11 @@ public protocol HomeCardButtonDelegate {
     func didPressButton(button: UIButton, value: String, action: ButtonActionIdentifier)
 }
 
-open class HomeCardView: UIView {
+open class HomeCardView: CardView {
     
     let buttonDelegate : HomeCardButtonDelegate
     let buttonPressValue : String
     let buttonAction : ButtonActionIdentifier
-    
-    private lazy var stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.distribution = .fill
-        stack.alignment = .fill
-        stack.axis = .vertical
-        stack.spacing = 25
-        return stack
-    }()
     
     lazy var titleLabel : UILabel = {
         let label = UILabel()
@@ -50,6 +41,12 @@ open class HomeCardView: UIView {
         return view
     }()
     
+    lazy var contentButton : UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     public init(buttonDelegate: HomeCardButtonDelegate, buttonPressValue : String, buttonAction: ButtonActionIdentifier) {
         self.buttonDelegate = buttonDelegate
         self.buttonPressValue = buttonPressValue
@@ -62,23 +59,22 @@ open class HomeCardView: UIView {
     }
     
     public func prepare() {
-        self.stackView.addArrangedSubview(titleLabel)
-        self.stackView.addArrangedSubview(content)
-        self.stackView.addArrangedSubview(actionButton)
-        self.addSubview(self.stackView)
-        self.createConstraint()
-    }
-
-    private func createConstraint() {
-        self.stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30).isActive = true
-        self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
-        self.stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30).isActive = true
-        self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
-
+        self.add(titleLabel)
+        self.add(content)
+        self.contentButton.addSubview(actionButton)
+        self.constraints()
+        self.add(contentButton)
         
     }
     
+    private func constraints(){
+        self.contentButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+        self.actionButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        self.actionButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.actionButton.centerYAnchor.constraint(equalTo: self.contentButton.centerYAnchor).isActive = true
+        self.actionButton.centerXAnchor.constraint(equalTo: self.contentButton.centerXAnchor).isActive = true
+    }
+        
 }
 
 extension HomeCardView {

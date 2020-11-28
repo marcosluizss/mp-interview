@@ -41,14 +41,17 @@ public class HomeCardWidgetView : UIView {
     }
     
     public func prepare() {
+        self.cardNumberLabel.text = cardData.cardNumber
+        //setando views do card
         self.homeCardView.titleLabel.text = cardData.title
-        cardNumberLabel.text = cardData.cardNumber
         self.homeCardView.content.addSubview(cardNumberLabel)
         self.homeCardView.actionButton.setTitle(cardData.buttonText, for: .normal)
+        //adicionando na view
         self.addSubview(self.homeCardView)
+        //constraints
         createConstraints()
+        //exibindo
         homeCardView.prepare()
-        
     }
     
     func createConstraints(){
@@ -57,6 +60,9 @@ public class HomeCardWidgetView : UIView {
         self.homeCardView.leadingAnchor.constraint(equalTo:self.leadingAnchor).isActive = true
         self.homeCardView.trailingAnchor.constraint(equalTo:self.trailingAnchor).isActive = true
         self.homeCardView.bottomAnchor.constraint(equalTo:self.bottomAnchor).isActive = true
+        
+        self.cardNumberLabel.leadingAnchor.constraint(equalTo:self.homeCardView.content.leadingAnchor).isActive = true
+        self.cardNumberLabel.trailingAnchor.constraint(equalTo:self.homeCardView.content.trailingAnchor).isActive = true
     }
     
 }
