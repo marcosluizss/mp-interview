@@ -1,5 +1,5 @@
 //
-//  WidgetsModel.swift
+//  HomeWidgetModel.swift
 //  MPInterview
 //
 //  Created by Marcos Luiz on 26/11/20.
@@ -8,14 +8,19 @@
 
 import Foundation
 
-enum homeWidgetType : String, Codable {
+public enum HomeWidgetIdentifier : String, Codable {
     case header = "HOME_HEADER_WIDGET"
     case card = "HOME_CARD_WIDGET"
     case statement = "HOME_STATEMENT_WIDGET"
 }
 
+public enum ButtonActionIdentifier : String, Codable {
+    case cardScreen = "CARD_SCREEN"
+    case statementScreen = "STATEMENT_SCREEN"
+}
+
 public struct HomeWidget : Codable {
-    var identifier: homeWidgetType
+    var identifier: HomeWidgetIdentifier
     var content: Content
     
     public struct Content : Codable {
@@ -34,7 +39,7 @@ public struct HomeWidget : Codable {
             var action : Action
             
             struct Action : Codable {
-                var identifier : String
+                var identifier : ButtonActionIdentifier
                 var content : Content
                 
                 struct Content : Codable {

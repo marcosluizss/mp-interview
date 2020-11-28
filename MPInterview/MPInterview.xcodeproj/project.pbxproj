@@ -19,7 +19,14 @@
 		85246950256F504400A81A66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694F256F504400A81A66 /* Constants.swift */; };
 		85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246951256F54E300A81A66 /* HomeViewModel.swift */; };
 		85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246956256F561800A81A66 /* HomeWidgetModel.swift */; };
-		857BF31F2570A057008771E6 /* HomeHeaderWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857BF31E2570A057008771E6 /* HomeHeaderWidget.swift */; };
+		855ED2902571E34E00AD67EE /* HomeCardWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */; };
+		855ED29B257200AF00AD67EE /* HomeStatementWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */; };
+		855ED2A02572033900AD67EE /* HomeStatementWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */; };
+		855ED2AA25720D8D00AD67EE /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED2A925720D8D00AD67EE /* CardViewController.swift */; };
+		855ED2B225720D9E00AD67EE /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED2B125720D9E00AD67EE /* StatementViewController.swift */; };
+		85BC5DBE2571946700125362 /* HomeHeaderWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */; };
+		85BC5DC32571949F00125362 /* HomeCardWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */; };
+		85BC5DC82571955E00125362 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DC72571955E00125362 /* HomeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +65,14 @@
 		8524694F256F504400A81A66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85246951256F54E300A81A66 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		85246956256F561800A81A66 /* HomeWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetModel.swift; sourceTree = "<group>"; };
-		857BF31E2570A057008771E6 /* HomeHeaderWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidget.swift; sourceTree = "<group>"; };
+		855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetUIModel.swift; sourceTree = "<group>"; };
+		855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetView.swift; sourceTree = "<group>"; };
+		855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetUIModel.swift; sourceTree = "<group>"; };
+		855ED2A925720D8D00AD67EE /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		855ED2B125720D9E00AD67EE /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
+		85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidgetUIModel.swift; sourceTree = "<group>"; };
+		85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetView.swift; sourceTree = "<group>"; };
+		85BC5DC72571955E00125362 /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +126,11 @@
 				85246913256F38F800A81A66 /* AppDelegate.swift */,
 				85246915256F38F800A81A66 /* SceneDelegate.swift */,
 				85246921256F38FA00A81A66 /* Info.plist */,
+				85246955256F556500A81A66 /* Models */,
+				85246953256F552F00A81A66 /* Controllers */,
+				85246954256F553A00A81A66 /* ViewModels */,
+				855233FD2570554B00F1F952 /* Views */,
 				85246943256F454500A81A66 /* Core */,
-				85246946256F468100A81A66 /* Modules */,
 			);
 			path = MPInterview;
 			sourceTree = "<group>";
@@ -164,25 +181,6 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		85246946256F468100A81A66 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				85246947256F469E00A81A66 /* Home */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		85246947256F469E00A81A66 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				855233FD2570554B00F1F952 /* Views */,
-				85246955256F556500A81A66 /* Models */,
-				85246954256F553A00A81A66 /* ViewModels */,
-				85246953256F552F00A81A66 /* Controllers */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		85246948256F46E000A81A66 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				85246917256F38F800A81A66 /* HomeViewController.swift */,
+				855ED2A925720D8D00AD67EE /* CardViewController.swift */,
+				855ED2B125720D9E00AD67EE /* StatementViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				85246956256F561800A81A66 /* HomeWidgetModel.swift */,
+				85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */,
+				855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */,
+				855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,7 +229,9 @@
 		855233FD2570554B00F1F952 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				857BF31E2570A057008771E6 /* HomeHeaderWidget.swift */,
+				85BC5DC72571955E00125362 /* HomeCardView.swift */,
+				85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */,
+				855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,12 +368,19 @@
 			files = (
 				85246918256F38F800A81A66 /* HomeViewController.swift in Sources */,
 				85246914256F38F800A81A66 /* AppDelegate.swift in Sources */,
+				85BC5DC32571949F00125362 /* HomeCardWidgetView.swift in Sources */,
+				855ED29B257200AF00AD67EE /* HomeStatementWidgetView.swift in Sources */,
+				85BC5DC82571955E00125362 /* HomeCardView.swift in Sources */,
+				855ED2A02572033900AD67EE /* HomeStatementWidgetUIModel.swift in Sources */,
 				85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */,
+				85BC5DBE2571946700125362 /* HomeHeaderWidgetUIModel.swift in Sources */,
+				855ED2AA25720D8D00AD67EE /* CardViewController.swift in Sources */,
 				8524694A256F46F800A81A66 /* BaseViewController.swift in Sources */,
 				85246916256F38F800A81A66 /* SceneDelegate.swift in Sources */,
 				85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */,
+				855ED2B225720D9E00AD67EE /* StatementViewController.swift in Sources */,
 				8524694E256F494D00A81A66 /* HTTPService.swift in Sources */,
-				857BF31F2570A057008771E6 /* HomeHeaderWidget.swift in Sources */,
+				855ED2902571E34E00AD67EE /* HomeCardWidgetUIModel.swift in Sources */,
 				85246950256F504400A81A66 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

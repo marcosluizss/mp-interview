@@ -31,7 +31,7 @@
                     do{
                         let homeResponse = try decoder.decode(HomeResponse.self, from: data)
                         self.widgets = homeResponse.widgets
-                    completion(.success(homeResponse.widgets))
+                    completion(.success(self.widgets))
                 }catch {
                     print("Unexpected error: \(error).")
                 }
