@@ -8,12 +8,19 @@
 
 import Foundation
 
-class StatementDetailViewModel {
+class StatementViewModel {
+    
+    init(accountId: String? = nil) {
+        if let id = accountId {
+            self.accountId = id
+        }
+    }
+    
     var accountId : String?
     var statement : StatementModel?
 }
 
-extension StatementDetailViewModel {
+extension StatementViewModel {
     func fetchStatementDetail(completion: @escaping (Result<StatementModel, Error>) -> Void){
         guard let accountId = accountId else {
             completion(.failure(APIResponseError.requestIdInvalid))

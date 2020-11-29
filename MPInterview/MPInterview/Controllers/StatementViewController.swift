@@ -9,12 +9,11 @@
 import Foundation
 import UIKit
 
-class StatementDetailViewController: BaseViewController {
+class StatementViewController: BaseViewController {
     
-    var statementDetailViewModel = StatementDetailViewModel()
-    public var accountId : String = ""
+    var statementViewModel = StatementViewModel()
     let pageTitle = "Extrato"
-        
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +27,6 @@ class StatementDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
-        statementDetailViewModel.accountId = accountId
         
         tableView.register(StatementCell.self, forCellReuseIdentifier: "cell")
         
@@ -36,7 +34,7 @@ class StatementDetailViewController: BaseViewController {
         
         self.contraints()
         
-        statementDetailViewModel.fetchStatementDetail{ [weak self] result in
+        statementViewModel.fetchStatementDetail{ [weak self] result in
             switch result {
             case .success(_):
             DispatchQueue.main.async {
@@ -82,20 +80,20 @@ class StatementDetailViewController: BaseViewController {
     }
 }
 
-extension StatementDetailViewController: UITableViewDataSource {
+extension StatementViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (statementDetailViewModel.statement?.transactions.count ?? 0 ) + 1
+        return (statementViewModel.statement?.transactions.count ?? 0 ) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! StatementCell
         if(indexPath.row == 0){
-            cell.label.text = statementDetailViewModel.statement?.balance.label
-            cell.value.text = statementDetailViewModel.statement?.balance.value
+            cell.label.text = statementViewModel.statement?.balance.label
+            cell.value.text = statementViewModel.statement?.balance.value
         }else{
             
-            let cellData = statementDetailViewModel.statement?.transactions[indexPath.row-1]
+            let cellData = statementViewModel.statement?.transactions[indexPath.row-1]
             cell.label.text = cellData?.label
             cell.value.text = cellData?.value
             cell.descriptionLabel.text = cellData?.description
@@ -110,4 +108,4 @@ extension StatementDetailViewController: UITableViewDataSource {
     
 }
 
-extension StatementDetailViewController: UITableViewDelegate { }
+extension StatementViewController: UITableViewDelegate { }

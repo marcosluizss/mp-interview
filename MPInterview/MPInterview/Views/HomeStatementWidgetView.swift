@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol HomeStatementProtocol {
+public protocol HomeStatementModelProtocol {
     var title : String { get set }
     var balanceLabel : String { get set }
     var balanceValue : String { get set }
@@ -22,8 +22,8 @@ public protocol HomeStatementProtocol {
 public class HomeStatementWidgetView : UIView {
     
     let homeCardView: HomeCardView
-    public let statementData: HomeStatementProtocol
-   
+    public let statementModel: HomeStatementModelProtocol
+    
     private lazy var horizontalStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -35,21 +35,21 @@ public class HomeStatementWidgetView : UIView {
     
     private lazy var balanceLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var balanceValue : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    public init(statementData: HomeStatementProtocol) {
-        self.statementData = statementData
-        self.homeCardView = HomeCardView(buttonDelegate: statementData.buttonActionDelegate, buttonPressValue:statementData.accountId, buttonAction: statementData.buttonAction)
+    public init(statementModel: HomeStatementModelProtocol) {
+        self.statementModel = statementModel
+        self.homeCardView = HomeCardView(buttonDelegate: statementModel.buttonActionDelegate, buttonPressValue:statementModel.accountId, buttonAction: statementModel.buttonAction)
         super.init(frame: .zero)
     }
     
@@ -58,13 +58,13 @@ public class HomeStatementWidgetView : UIView {
     }
     
     public func prepare() {
-        self.homeCardView.titleLabel.text = statementData.title
-        balanceLabel.text = statementData.balanceLabel
-        balanceValue.text = statementData.balanceValue
+        self.homeCardView.titleLabel.text = statementModel.title
+        balanceLabel.text = statementModel.balanceLabel
+        balanceValue.text = statementModel.balanceValue
         horizontalStack.addArrangedSubview(balanceLabel)
         horizontalStack.addArrangedSubview(balanceValue)
         self.homeCardView.content.addSubview(horizontalStack)
-        self.homeCardView.actionButton.setTitle(statementData.buttonText, for: .normal)
+        self.homeCardView.actionButton.setTitle(statementModel.buttonText, for: .normal)
         self.addSubview(self.homeCardView)
         createConstraints()
         homeCardView.prepare()
@@ -72,6 +72,8 @@ public class HomeStatementWidgetView : UIView {
     }
     
     func createConstraints(){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         self.homeCardView.translatesAutoresizingMaskIntoConstraints = false
         self.homeCardView.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.homeCardView.leadingAnchor.constraint(equalTo:self.leadingAnchor).isActive = true

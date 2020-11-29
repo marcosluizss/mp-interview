@@ -8,6 +8,15 @@
 
 import Foundation
 
-/*public struct HomeHeaderWidgetUIModel : HomeHeaderProtocol {
-    var title : String
-}*/
+public struct HomeHeaderWidgetUIModel : HomeHeaderModelProtocol {
+    public var title : String
+}
+
+extension HomeHeaderWidgetUIModel {
+    static func fromHomeWidget(homeWidget: HomeWidget) -> HomeHeaderWidgetUIModel {
+        
+        let title = homeWidget.content.title
+            
+        return HomeHeaderWidgetUIModel(title: title)
+    }
+}

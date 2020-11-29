@@ -33,7 +33,7 @@ open class CardView: UIView {
         super.layoutSubviews()
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(red:200/255, green: 200/255, blue: 200/255, alpha: 1).cgColor
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
     }
     

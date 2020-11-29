@@ -14,14 +14,14 @@ class StatementCell : UITableViewCell {
     
     public lazy var label : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     public lazy var value : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
         return label
@@ -29,7 +29,7 @@ class StatementCell : UITableViewCell {
     
     public lazy var descriptionLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.font = UIFont.systemFont(ofSize: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

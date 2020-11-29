@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-class CardDetailViewController: BaseViewController {
+class CreditCardViewController: BaseViewController {
     
     var cardDetailViewModel = CardDetailViewModel()
-    var cardId : String = ""
     let pageTitle  = "Cartão"
     
     private lazy var cardDetailView: CardDetailView = {
@@ -54,7 +53,6 @@ class CardDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
-        cardDetailViewModel.cardId = cardId
         
         self.view.addSubview(stackView)
             

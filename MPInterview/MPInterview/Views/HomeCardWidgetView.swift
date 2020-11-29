@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol HomeCardProtocol {
+public protocol HomeCardModelProtocol {
     var title : String { get set }
     var cardNumber : String { get set }
     var buttonText : String { get set }
@@ -21,18 +21,18 @@ public protocol HomeCardProtocol {
 public class HomeCardWidgetView : UIView {
     
     public let homeCardView: HomeCardView
-    public let cardData: HomeCardProtocol
+    public let cardModel: HomeCardModelProtocol
    
     private lazy var cardNumberLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    public init(cardData: HomeCardProtocol) {
-        self.cardData = cardData
-        self.homeCardView = HomeCardView(buttonDelegate: cardData.buttonActionDelegate, buttonPressValue:cardData.cardId, buttonAction: cardData.buttonAction)
+    public init(cardModel: HomeCardModelProtocol) {
+        self.cardModel = cardModel
+        self.homeCardView = HomeCardView(buttonDelegate: cardModel.buttonActionDelegate, buttonPressValue:cardModel.cardId, buttonAction: cardModel.buttonAction)
         super.init(frame: .zero)
     }
     
@@ -41,11 +41,11 @@ public class HomeCardWidgetView : UIView {
     }
     
     public func prepare() {
-        self.cardNumberLabel.text = cardData.cardNumber
+        self.cardNumberLabel.text = cardModel.cardNumber
         //setando views do card
-        self.homeCardView.titleLabel.text = cardData.title
+        self.homeCardView.titleLabel.text = cardModel.title
         self.homeCardView.content.addSubview(cardNumberLabel)
-        self.homeCardView.actionButton.setTitle(cardData.buttonText, for: .normal)
+        self.homeCardView.actionButton.setTitle(cardModel.buttonText, for: .normal)
         //adicionando na view
         self.addSubview(self.homeCardView)
         //constraints
@@ -55,6 +55,8 @@ public class HomeCardWidgetView : UIView {
     }
     
     func createConstraints(){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         self.homeCardView.translatesAutoresizingMaskIntoConstraints = false
         self.homeCardView.topAnchor.constraint(equalTo:self.topAnchor).isActive = true
         self.homeCardView.leadingAnchor.constraint(equalTo:self.leadingAnchor).isActive = true

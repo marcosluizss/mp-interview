@@ -9,6 +9,13 @@
 import Foundation
 
 class CardDetailViewModel {
+    
+    init(cardId: String? = nil) {
+        if let id = cardId {
+            self.cardId = id
+        }
+    }
+    
     var cardId : String?
     var card : CreditCardModel?
 }
