@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CardDetailModel : Codable {
+struct CreditCardModel : Codable {
     var cardNumber : String
     var cardName : String
     var expirationDate : String

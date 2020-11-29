@@ -7,15 +7,37 @@
 //
 
 import Foundation
-	
-class HTTPService {
-    static let shared: HTTPService = HTTPService()
+
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+    func cancel()
+}
+
+protocol URLSessionProtocol {
+    func dataTask (
+        with request: URLRequest,
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTask
+}
+
+extension URLSession : URLSessionProtocol{}
+extension URLSessionDataTask : URLSessionDataTaskProtocol{}
+
+
+//enum para retorno de erros
+public enum HTTPError : Error {
+    case unavailableService
+    case invalidURL
+    case invalidResponse(Data?,URLResponse?)
+}
+
+class HTTPClient {
+    static let shared: HTTPClient = HTTPClient()
+    private let session : URLSession
     
-    //enum para retorno de erros
-    enum HTTPError : Error {
-        case unavailableService
-        case invalidURL
-        case invalidResponse(Data?,URLResponse?)
+    init(session: URLSession = .shared ){
+        self.session = session
     }
     
     // função base para realização de get
@@ -25,8 +47,6 @@ class HTTPService {
             completionBlock(.failure(HTTPError.invalidURL))
             return
         }
-        
-        let session = URLSession.shared
         let request = URLRequest(url: url)
         
         let task = session.dataTask(with: request) { (responseData : Data?, urlResponse: URLResponse?, error: Error?) in
@@ -39,7 +59,7 @@ class HTTPService {
                 completionBlock(.failure(HTTPError.invalidResponse(responseData, urlResponse)))
                 return
             }
-            //print(String(decoding: data, as: UTF8.self))
+
             completionBlock(.success(data))
         }
         task.resume()

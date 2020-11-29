@@ -12,6 +12,7 @@ public enum HomeWidgetIdentifier : String, Codable {
     case header = "HOME_HEADER_WIDGET"
     case card = "HOME_CARD_WIDGET"
     case statement = "HOME_STATEMENT_WIDGET"
+    case notMapped
 }
 
 public enum ButtonActionIdentifier : String, Codable {
@@ -19,7 +20,7 @@ public enum ButtonActionIdentifier : String, Codable {
     case statementScreen = "STATEMENT_SCREEN"
 }
 
-public struct HomeWidget : Codable {
+public struct HomeWidget {
     var identifier: HomeWidgetIdentifier
     var content: Content
     
@@ -50,11 +51,39 @@ public struct HomeWidget : Codable {
         }
     }
     
+    enum CodingKeys: String, CodingKey {
+        case identifier
+        case content
+    }
 }
 
+extension HomeWidget : Decodable {
+    public init(from decoder: Decoder) throws {
+        let widget = try decoder.container(keyedBy: CodingKeys.self)
+        let ident = try widget.decode(String.self, forKey: .identifier)
+        content = try widget.decode(Content.self, forKey: .content)
+        
+        switch ident {
+        case HomeWidgetIdentifier.header.rawValue:
+            identifier = HomeWidgetIdentifier.header
+        case HomeWidgetIdentifier.card.rawValue:
+            identifier = HomeWidgetIdentifier.card
+        case HomeWidgetIdentifier.statement.rawValue:
+            identifier = HomeWidgetIdentifier.statement
+        default:
+            identifier = HomeWidgetIdentifier.notMapped
+        }
+    }
+}
+
+extension HomeWidget : Encodable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(identifier.rawValue, forKey: .identifier)
+        try container.encode(content, forKey: .content)
+    }
+}
 
 public struct HomeResponse : Decodable {
     var widgets = [HomeWidget]()
 }
-    
-

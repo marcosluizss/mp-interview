@@ -59,6 +59,8 @@ class HomeViewController: BaseViewController {
                 self.homeStatementWidgetView = HomeStatementWidgetView.init(statementData: getHomeStatementdWidgetData(data: widget)!)
                 self.stackView.addArrangedSubview(self.homeStatementWidgetView!)
                 homeStatementWidgetView?.prepare()
+            default:
+                print("notMapped")
             }
         }
     }

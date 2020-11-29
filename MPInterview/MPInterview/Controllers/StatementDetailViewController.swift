@@ -12,7 +12,7 @@ import UIKit
 class StatementDetailViewController: BaseViewController {
     
     var statementDetailViewModel = StatementDetailViewModel()
-    public var accountId : String?
+    public var accountId : String = ""
     let pageTitle = "Extrato"
         
     private lazy var tableView: UITableView = {
@@ -28,7 +28,7 @@ class StatementDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
-        statementDetailViewModel.accountId = accountId ?? ""
+        statementDetailViewModel.accountId = accountId
         
         tableView.register(StatementCell.self, forCellReuseIdentifier: "cell")
         
@@ -36,11 +36,36 @@ class StatementDetailViewController: BaseViewController {
         
         self.contraints()
         
-        statementDetailViewModel.fetchStatementDetail{ [weak self] statement in
+        statementDetailViewModel.fetchStatementDetail{ [weak self] result in
+            switch result {
+            case .success(_):
             DispatchQueue.main.async {
                 self?.updateUI()
             }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    guard let error = error as? APIResponseError else {
+                        return
+                    }
+                    switch error {
+                    case .messageError(let msgError):
+                        self?.loadErrorAlert(message: msgError)
+                    default:
+                        print("erro não mapeado")
+                        self?.loadErrorAlert(message: "Tente novamente mais tarde")
+                    }
+                }
+            }
         }
+    }
+    
+    private func loadErrorAlert(message : String){
+        let dialogMessage = UIAlertController(title: "Não é possível exibir o extrato.", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { ( action ) -> Void in
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        dialogMessage.addAction(ok)
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     func updateUI() {

@@ -9,35 +9,27 @@
 import Foundation
 
 class StatementDetailViewModel {
-    
-    init(id: String? = nil) {
-        if let id = id {
-            accountId = id
-        }
-    }
-    var accountId : String = ""
-    var statement : StatementDetailModel?
+    var accountId : String?
+    var statement : StatementModel?
 }
 
 extension StatementDetailViewModel {
-    func fetchStatementDetail(completion: @escaping (Result<StatementDetailModel, Error>) -> Void){
-        let urlPath =  "\(baseUrl)\(statementUrlPath)/\(accountId)"
-        //print(urlPath)
-        HTTPService.shared.get(urlPath: urlPath, completionBlock: { [weak self] result in
+    func fetchStatementDetail(completion: @escaping (Result<StatementModel, Error>) -> Void){
+        guard let accountId = accountId else {
+            completion(.failure(APIResponseError.requestIdInvalid))
+            return
+        }
+        InterviewAPI.shared.fetchAccountStatement(accountId: accountId, completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
                 case .failure(let error):
-                    print("failure", error)
-                case .success(let data):
-                    let decoder = JSONDecoder()
-                    do{
-                        let statementDetail = try decoder.decode(StatementDetailModel.self, from: data)
-                        self.statement = statementDetail
-                        completion(.success(statementDetail))
-                    }catch {
-                        print("Unexpected error: \(error).")
-                    }
+                    completion(.failure(error))
+                case .success(let statement):
+                    // retira os widgets não mapeados
+                    self.statement = statement
+                    completion(.success(self.statement!))
             }
         })
+        
     }
 }

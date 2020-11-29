@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StatementDetailModel : Codable {
+struct StatementModel : Codable {
     var balance : StatementDetailBalance
     var transactions : [StatementDetailTransactions]
 }

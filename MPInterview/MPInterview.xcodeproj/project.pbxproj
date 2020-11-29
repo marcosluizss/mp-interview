@@ -15,7 +15,7 @@
 		8524692B256F38FA00A81A66 /* MPInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524692A256F38FA00A81A66 /* MPInterviewTests.swift */; };
 		85246936256F38FA00A81A66 /* MPInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246935256F38FA00A81A66 /* MPInterviewUITests.swift */; };
 		8524694A256F46F800A81A66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246949256F46F800A81A66 /* BaseViewController.swift */; };
-		8524694E256F494D00A81A66 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694D256F494D00A81A66 /* HTTPService.swift */; };
+		8524694E256F494D00A81A66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694D256F494D00A81A66 /* HTTPClient.swift */; };
 		85246950256F504400A81A66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694F256F504400A81A66 /* Constants.swift */; };
 		85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246951256F54E300A81A66 /* HomeViewModel.swift */; };
 		85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246956256F561800A81A66 /* HomeWidgetModel.swift */; };
@@ -31,6 +31,10 @@
 		8567075A257286F500B06AC3 /* StatementDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85670759257286F500B06AC3 /* StatementDetailModel.swift */; };
 		856707652572881300B06AC3 /* StatementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707642572881300B06AC3 /* StatementDetailViewModel.swift */; };
 		8567076A2572898A00B06AC3 /* StatementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707692572898A00B06AC3 /* StatementDetailView.swift */; };
+		856707812572C2CD00B06AC3 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707802572C2CD00B06AC3 /* HttpClientTests.swift */; };
+		856707A125730E2600B06AC3 /* InterviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707A025730E2600B06AC3 /* InterviewAPI.swift */; };
+		856707A72573182400B06AC3 /* HTTPMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707A62573182400B06AC3 /* HTTPMock.swift */; };
+		856707AF25731D3400B06AC3 /* InterviewAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707AE25731D3400B06AC3 /* InterviewAPITest.swift */; };
 		85BC5DBE2571946700125362 /* HomeHeaderWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */; };
 		85BC5DC32571949F00125362 /* HomeCardWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */; };
 		85BC5DC82571955E00125362 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DC72571955E00125362 /* HomeCardView.swift */; };
@@ -68,7 +72,7 @@
 		85246935256F38FA00A81A66 /* MPInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPInterviewUITests.swift; sourceTree = "<group>"; };
 		85246937256F38FA00A81A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85246949256F46F800A81A66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		8524694D256F494D00A81A66 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		8524694D256F494D00A81A66 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		8524694F256F504400A81A66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85246951256F54E300A81A66 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		85246956256F561800A81A66 /* HomeWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetModel.swift; sourceTree = "<group>"; };
@@ -84,6 +88,10 @@
 		85670759257286F500B06AC3 /* StatementDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailModel.swift; sourceTree = "<group>"; };
 		856707642572881300B06AC3 /* StatementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailViewModel.swift; sourceTree = "<group>"; };
 		856707692572898A00B06AC3 /* StatementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailView.swift; sourceTree = "<group>"; };
+		856707802572C2CD00B06AC3 /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
+		856707A025730E2600B06AC3 /* InterviewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAPI.swift; sourceTree = "<group>"; };
+		856707A62573182400B06AC3 /* HTTPMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMock.swift; sourceTree = "<group>"; };
+		856707AE25731D3400B06AC3 /* InterviewAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAPITest.swift; sourceTree = "<group>"; };
 		85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidgetUIModel.swift; sourceTree = "<group>"; };
 		85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetView.swift; sourceTree = "<group>"; };
 		85BC5DC72571955E00125362 /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 				85246913256F38F800A81A66 /* AppDelegate.swift */,
 				85246915256F38F800A81A66 /* SceneDelegate.swift */,
 				8524694C256F48CA00A81A66 /* Services */,
+				8567079F25730E0D00B06AC3 /* API */,
 				85246955256F556500A81A66 /* Models */,
 				85246953256F552F00A81A66 /* Controllers */,
 				85246954256F553A00A81A66 /* ViewModels */,
@@ -155,8 +164,11 @@
 		85246929256F38FA00A81A66 /* MPInterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				8524692A256F38FA00A81A66 /* MPInterviewTests.swift */,
 				8524692C256F38FA00A81A66 /* Info.plist */,
+				856707A5257317ED00B06AC3 /* Mocks */,
+				8524692A256F38FA00A81A66 /* MPInterviewTests.swift */,
+				856707802572C2CD00B06AC3 /* HttpClientTests.swift */,
+				856707AE25731D3400B06AC3 /* InterviewAPITest.swift */,
 			);
 			path = MPInterviewTests;
 			sourceTree = "<group>";
@@ -189,7 +201,7 @@
 		8524694C256F48CA00A81A66 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8524694D256F494D00A81A66 /* HTTPService.swift */,
+				8524694D256F494D00A81A66 /* HTTPClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +251,22 @@
 				856707692572898A00B06AC3 /* StatementDetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8567079F25730E0D00B06AC3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				856707A025730E2600B06AC3 /* InterviewAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		856707A5257317ED00B06AC3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				856707A62573182400B06AC3 /* HTTPMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,8 +417,9 @@
 				85246916256F38F800A81A66 /* SceneDelegate.swift in Sources */,
 				85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */,
 				855ED2B225720D9E00AD67EE /* StatementDetailViewController.swift in Sources */,
-				8524694E256F494D00A81A66 /* HTTPService.swift in Sources */,
+				8524694E256F494D00A81A66 /* HTTPClient.swift in Sources */,
 				855ED2902571E34E00AD67EE /* HomeCardWidgetUIModel.swift in Sources */,
+				856707A125730E2600B06AC3 /* InterviewAPI.swift in Sources */,
 				85670738257267AA00B06AC3 /* CardView.swift in Sources */,
 				85246950256F504400A81A66 /* Constants.swift in Sources */,
 				856707652572881300B06AC3 /* StatementDetailViewModel.swift in Sources */,
@@ -401,7 +430,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856707AF25731D3400B06AC3 /* InterviewAPITest.swift in Sources */,
+				856707A72573182400B06AC3 /* HTTPMock.swift in Sources */,
 				8524692B256F38FA00A81A66 /* MPInterviewTests.swift in Sources */,
+				856707812572C2CD00B06AC3 /* HttpClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,6 +50,7 @@ class CardDetailViewController: BaseViewController {
         return label
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
@@ -57,13 +58,39 @@ class CardDetailViewController: BaseViewController {
         
         self.view.addSubview(stackView)
             
-        cardDetailViewModel.fetchCardDetail { [weak self] card in
+        cardDetailViewModel.fetchCardDetail { [weak self] result in
+            switch result {
+            case .success(_):
             DispatchQueue.main.async {
                 self?.showCardData()
             }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    guard let error = error as? APIResponseError else {
+                        return
+                    }
+                    switch error {
+                    case .messageError(let msgError):
+                        self?.loadErrorAlert(message: msgError)
+                    default:
+                        print("erro não mapeado")
+                        self?.loadErrorAlert(message: "Tente novamente mais tarde")
+                    }
+                }
+            }
+            
         }
         
         createContraints()
+    }
+    
+    private func loadErrorAlert(message : String){
+        let dialogMessage = UIAlertController(title: "Não é possível exibir o cartão.", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { ( action ) -> Void in
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        dialogMessage.addAction(ok)
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     private func showCardData(){
