@@ -12,13 +12,13 @@
 		85246918256F38F800A81A66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246917256F38F800A81A66 /* HomeViewController.swift */; };
 		8524691D256F38FA00A81A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8524691C256F38FA00A81A66 /* Assets.xcassets */; };
 		85246920256F38FA00A81A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8524691E256F38FA00A81A66 /* LaunchScreen.storyboard */; };
-		85246936256F38FA00A81A66 /* MPInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246935256F38FA00A81A66 /* MPInterviewUITests.swift */; };
 		8524694A256F46F800A81A66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246949256F46F800A81A66 /* BaseViewController.swift */; };
 		8524694E256F494D00A81A66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694D256F494D00A81A66 /* HTTPClient.swift */; };
 		85246950256F504400A81A66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694F256F504400A81A66 /* Constants.swift */; };
 		85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246951256F54E300A81A66 /* HomeViewModel.swift */; };
 		85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246956256F561800A81A66 /* HomeWidgetModel.swift */; };
 		853C06FF2573D293008C82AA /* HomeHeaderWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C06FE2573D293008C82AA /* HomeHeaderWidgetView.swift */; };
+		853C072A2573DC34008C82AA /* MPInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C07292573DC33008C82AA /* MPInterviewUITests.swift */; };
 		855ED2902571E34E00AD67EE /* HomeCardWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */; };
 		855ED29B257200AF00AD67EE /* HomeStatementWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */; };
 		855ED2A02572033900AD67EE /* HomeStatementWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */; };
@@ -68,7 +68,6 @@
 		85246926256F38FA00A81A66 /* MPInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8524692C256F38FA00A81A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85246931256F38FA00A81A66 /* MPInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85246935256F38FA00A81A66 /* MPInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPInterviewUITests.swift; sourceTree = "<group>"; };
 		85246937256F38FA00A81A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85246949256F46F800A81A66 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8524694D256F494D00A81A66 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		85246951256F54E300A81A66 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		85246956256F561800A81A66 /* HomeWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetModel.swift; sourceTree = "<group>"; };
 		853C06FE2573D293008C82AA /* HomeHeaderWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidgetView.swift; sourceTree = "<group>"; };
+		853C07292573DC33008C82AA /* MPInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPInterviewUITests.swift; sourceTree = "<group>"; };
 		855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetUIModel.swift; sourceTree = "<group>"; };
 		855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetView.swift; sourceTree = "<group>"; };
 		855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetUIModel.swift; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 				8524694C256F48CA00A81A66 /* Services */,
 				8567079F25730E0D00B06AC3 /* API */,
 				85246955256F556500A81A66 /* Models */,
-				85246953256F552F00A81A66 /* Controllers */,
 				85246954256F553A00A81A66 /* ViewModels */,
+				85246953256F552F00A81A66 /* Controllers */,
 				855233FD2570554B00F1F952 /* Views */,
 				85246945256F45C300A81A66 /* Assets */,
 				85246944256F455E00A81A66 /* Storyboard */,
@@ -175,8 +175,8 @@
 		85246934256F38FA00A81A66 /* MPInterviewUITests */ = {
 			isa = PBXGroup;
 			children = (
-				85246935256F38FA00A81A66 /* MPInterviewUITests.swift */,
 				85246937256F38FA00A81A66 /* Info.plist */,
+				853C07292573DC33008C82AA /* MPInterviewUITests.swift */,
 			);
 			path = MPInterviewUITests;
 			sourceTree = "<group>";
@@ -346,13 +346,21 @@
 			path = Statement;
 			sourceTree = "<group>";
 		};
+		853C07252573DAA7008C82AA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				85670737257267AA00B06AC3 /* CardView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		855233FD2570554B00F1F952 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				853C07252573DAA7008C82AA /* Common */,
 				853C07152573D848008C82AA /* Statement */,
 				853C07142573D82B008C82AA /* CreditCard */,
 				853C07132573D81F008C82AA /* Home */,
-				85670737257267AA00B06AC3 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -545,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85246936256F38FA00A81A66 /* MPInterviewUITests.swift in Sources */,
+				853C072A2573DC34008C82AA /* MPInterviewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

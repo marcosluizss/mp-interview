@@ -33,7 +33,7 @@ class CreditCardViewController: BaseViewController {
     
     private lazy var availableLimit : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         let availableLimit = cardDetailViewModel.card?.availableLimit ?? ""
         label.text = "Limite disponível: \(availableLimit)"
@@ -42,7 +42,7 @@ class CreditCardViewController: BaseViewController {
     
     private lazy var totalLimit : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         let totalLimit = cardDetailViewModel.card?.totalLimit ?? ""
         label.text = "Limite total: \(totalLimit)"

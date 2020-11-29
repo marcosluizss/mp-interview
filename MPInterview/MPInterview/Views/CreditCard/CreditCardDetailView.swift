@@ -32,7 +32,6 @@ open class CreditCardDetailView: CardView {
         return label
     }()
     
-    
     public init(cardNumber: String, cardName: String, expirationDate: String) {
         super.init(frame: .zero)
         self.cardNumber.text = cardNumber

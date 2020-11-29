@@ -20,22 +20,37 @@ class HomeViewController: BaseViewController {
         stack.spacing = 30
         return stack
     }()
+    
+    lazy var errorLabel : UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
             
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.addSubview(stackView)
             
-        homeViewModel.fetchWidgets { [weak self] widgets in
-            DispatchQueue.main.async {
-                self?.addWidget()
+        homeViewModel.fetchWidgets { [weak self] result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.addWidgets()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.showError()
+                }
             }
         }
+        
         
         createContraints()
     }
     
-    private func addWidget(){
+    private func addWidgets(){
         for widget in homeViewModel.widgets {
             switch widget.identifier {
             case .header:
@@ -97,6 +112,13 @@ extension HomeViewController : HomeCardButtonDelegate {
         }
     }
     
+}
+
+extension HomeViewController {
+    func showError(){
+        self.errorLabel.text = "Desculpe, serviço indisponível. Tente novamente mais tarde"
+        self.stackView.addArrangedSubview(errorLabel)
+    }
 }
 
 

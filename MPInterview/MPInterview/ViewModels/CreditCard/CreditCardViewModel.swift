@@ -20,12 +20,8 @@ class CardDetailViewModel {
     var card : CreditCardModel?
 }
 
-enum CardDetailError : Error {
-    case noCardId
-}
-
 extension CardDetailViewModel {
-    func fetchCardDetail(completion: @escaping (Result<CreditCardModel, Error>) -> Void){
+    func fetchCardDetail(completion: @escaping (Result<Bool, Error>) -> Void){
         guard let cardId = cardId else {
             completion(.failure(APIResponseError.requestIdInvalid))
             return
@@ -38,7 +34,7 @@ extension CardDetailViewModel {
                 case .success(let creditCard):
                     // retira os widgets não mapeados
                     self.card = creditCard
-                    completion(.success(self.card!))
+                    completion(.success(true))
             }
         })
    

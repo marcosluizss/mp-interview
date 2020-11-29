@@ -13,16 +13,16 @@ class HomeViewModel {
 }
 
 extension HomeViewModel {
-    func fetchWidgets(completion: @escaping (Result<[HomeWidget], Error>) -> Void){
+    func fetchWidgets(completion: @escaping (Result<Bool, Error>) -> Void){
         InterviewAPI.shared.fetchHomeWidgets(completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
                 case .failure(let error):
-                    print("failure", error)
+                    completion(.failure(error))
                 case .success(let widgets):
                     // retira os widgets não mapeados
                     self.widgets = widgets.filter({ $0.identifier != .notMapped })
-                    completion(.success(self.widgets))
+                    completion(.success(true))
             }
         })
     }
