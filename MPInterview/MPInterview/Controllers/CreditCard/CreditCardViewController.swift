@@ -49,7 +49,6 @@ class CreditCardViewController: BaseViewController {
         return label
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
@@ -59,9 +58,9 @@ class CreditCardViewController: BaseViewController {
         cardDetailViewModel.fetchCardDetail { [weak self] result in
             switch result {
             case .success(_):
-            DispatchQueue.main.async {
-                self?.showCardData()
-            }
+                DispatchQueue.main.async {
+                    self?.showCardData()
+                }
             case .failure(let error):
                 DispatchQueue.main.async {
                     guard let error = error as? APIResponseError else {
@@ -72,7 +71,7 @@ class CreditCardViewController: BaseViewController {
                         self?.loadErrorAlert(message: msgError)
                     default:
                         print("erro não mapeado")
-                        self?.loadErrorAlert(message: "Tente novamente mais tarde")
+                        self?.loadErrorAlert(message: "Desculpe. Tente novamente mais tarde")
                     }
                 }
             }
@@ -80,15 +79,6 @@ class CreditCardViewController: BaseViewController {
         }
         
         createContraints()
-    }
-    
-    private func loadErrorAlert(message : String){
-        let dialogMessage = UIAlertController(title: "Não é possível exibir o cartão.", message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { ( action ) -> Void in
-            _ = self.navigationController?.popViewController(animated: true)
-        })
-        dialogMessage.addAction(ok)
-        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     private func showCardData(){
@@ -106,5 +96,16 @@ class CreditCardViewController: BaseViewController {
         self.stackView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10).isActive = true
         self.stackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
 
+    }
+}
+
+extension CreditCardViewController {
+    private func loadErrorAlert(message : String){
+        let dialogMessage = UIAlertController(title: "Não foi possível recuperar o cartão", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { ( action ) -> Void in
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        dialogMessage.addAction(ok)
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }

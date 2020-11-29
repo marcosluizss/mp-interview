@@ -12,7 +12,6 @@
 		85246918256F38F800A81A66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246917256F38F800A81A66 /* HomeViewController.swift */; };
 		8524691D256F38FA00A81A66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8524691C256F38FA00A81A66 /* Assets.xcassets */; };
 		85246920256F38FA00A81A66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8524691E256F38FA00A81A66 /* LaunchScreen.storyboard */; };
-		8524692B256F38FA00A81A66 /* MPInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524692A256F38FA00A81A66 /* MPInterviewTests.swift */; };
 		85246936256F38FA00A81A66 /* MPInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246935256F38FA00A81A66 /* MPInterviewUITests.swift */; };
 		8524694A256F46F800A81A66 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246949256F46F800A81A66 /* BaseViewController.swift */; };
 		8524694E256F494D00A81A66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524694D256F494D00A81A66 /* HTTPClient.swift */; };
@@ -67,7 +66,6 @@
 		8524691F256F38FA00A81A66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85246921256F38FA00A81A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85246926256F38FA00A81A66 /* MPInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8524692A256F38FA00A81A66 /* MPInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPInterviewTests.swift; sourceTree = "<group>"; };
 		8524692C256F38FA00A81A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85246931256F38FA00A81A66 /* MPInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85246935256F38FA00A81A66 /* MPInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPInterviewUITests.swift; sourceTree = "<group>"; };
@@ -168,7 +166,6 @@
 			children = (
 				8524692C256F38FA00A81A66 /* Info.plist */,
 				856707A5257317ED00B06AC3 /* Mocks */,
-				8524692A256F38FA00A81A66 /* MPInterviewTests.swift */,
 				856707802572C2CD00B06AC3 /* HttpClientTests.swift */,
 				856707AE25731D3400B06AC3 /* InterviewAPITest.swift */,
 			);
@@ -211,9 +208,9 @@
 		85246953256F552F00A81A66 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				853C070D2573D7DE008C82AA /* Home */,
 				853C070F2573D7F5008C82AA /* Statement */,
 				853C070E2573D7EF008C82AA /* CreditCard */,
-				853C070D2573D7DE008C82AA /* Home */,
 				853C070C2573D7D4008C82AA /* Common */,
 			);
 			path = Controllers;
@@ -540,7 +537,6 @@
 			files = (
 				856707AF25731D3400B06AC3 /* InterviewAPITest.swift in Sources */,
 				856707A72573182400B06AC3 /* HTTPMock.swift in Sources */,
-				8524692B256F38FA00A81A66 /* MPInterviewTests.swift in Sources */,
 				856707812572C2CD00B06AC3 /* HttpClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

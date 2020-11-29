@@ -21,14 +21,13 @@ class StatementViewController: BaseViewController {
         tableView.delegate = self
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.register(StatementCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = pageTitle
-        
-        tableView.register(StatementCell.self, forCellReuseIdentifier: "cell")
         
         self.view.addSubview(tableView)
         
@@ -37,9 +36,9 @@ class StatementViewController: BaseViewController {
         statementViewModel.fetchStatementDetail{ [weak self] result in
             switch result {
             case .success(_):
-            DispatchQueue.main.async {
-                self?.updateUI()
-            }
+                DispatchQueue.main.async {
+                    self?.updateUI()
+                }
             case .failure(let error):
                 DispatchQueue.main.async {
                     guard let error = error as? APIResponseError else {
@@ -57,15 +56,6 @@ class StatementViewController: BaseViewController {
         }
     }
     
-    private func loadErrorAlert(message : String){
-        let dialogMessage = UIAlertController(title: "Não é possível exibir o extrato.", message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { ( action ) -> Void in
-            _ = self.navigationController?.popViewController(animated: true)
-        })
-        dialogMessage.addAction(ok)
-        self.present(dialogMessage, animated: true, completion: nil)
-    }
-    
     func updateUI() {
         tableView.reloadData()
     }
@@ -77,6 +67,17 @@ class StatementViewController: BaseViewController {
         self.tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
         self.tableView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
+    }
+}
+
+extension StatementViewController {
+    private func loadErrorAlert(message : String){
+        let dialogMessage = UIAlertController(title: "Não foi possivel recuperar o extrato", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { ( action ) -> Void in
+            _ = self.navigationController?.popViewController(animated: true)
+        })
+        dialogMessage.addAction(ok)
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 }
 
