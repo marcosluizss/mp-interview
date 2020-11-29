@@ -27,11 +27,11 @@
 		855ED2B225720D9E00AD67EE /* StatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED2B125720D9E00AD67EE /* StatementViewController.swift */; };
 		85670738257267AA00B06AC3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85670737257267AA00B06AC3 /* CardView.swift */; };
 		85670745257270DE00B06AC3 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85670744257270DE00B06AC3 /* CreditCardViewModel.swift */; };
-		8567074A2572713200B06AC3 /* CardDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707492572713200B06AC3 /* CardDetailModel.swift */; };
-		856707552572759800B06AC3 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707542572759800B06AC3 /* CardDetailView.swift */; };
-		8567075A257286F500B06AC3 /* StatementDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85670759257286F500B06AC3 /* StatementDetailModel.swift */; };
+		8567074A2572713200B06AC3 /* CreditCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707492572713200B06AC3 /* CreditCardModel.swift */; };
+		856707552572759800B06AC3 /* CreditCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707542572759800B06AC3 /* CreditCardDetailView.swift */; };
+		8567075A257286F500B06AC3 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85670759257286F500B06AC3 /* Statement.swift */; };
 		856707652572881300B06AC3 /* StatementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707642572881300B06AC3 /* StatementViewModel.swift */; };
-		8567076A2572898A00B06AC3 /* StatementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707692572898A00B06AC3 /* StatementDetailView.swift */; };
+		8567076A2572898A00B06AC3 /* StatementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707692572898A00B06AC3 /* StatementCell.swift */; };
 		856707812572C2CD00B06AC3 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707802572C2CD00B06AC3 /* HttpClientTests.swift */; };
 		856707A125730E2600B06AC3 /* InterviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707A025730E2600B06AC3 /* InterviewAPI.swift */; };
 		856707A72573182400B06AC3 /* HTTPMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707A62573182400B06AC3 /* HTTPMock.swift */; };
@@ -85,11 +85,11 @@
 		855ED2B125720D9E00AD67EE /* StatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewController.swift; sourceTree = "<group>"; };
 		85670737257267AA00B06AC3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		85670744257270DE00B06AC3 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewModel.swift; sourceTree = "<group>"; };
-		856707492572713200B06AC3 /* CardDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailModel.swift; sourceTree = "<group>"; };
-		856707542572759800B06AC3 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
-		85670759257286F500B06AC3 /* StatementDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailModel.swift; sourceTree = "<group>"; };
+		856707492572713200B06AC3 /* CreditCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardModel.swift; sourceTree = "<group>"; };
+		856707542572759800B06AC3 /* CreditCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDetailView.swift; sourceTree = "<group>"; };
+		85670759257286F500B06AC3 /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		856707642572881300B06AC3 /* StatementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModel.swift; sourceTree = "<group>"; };
-		856707692572898A00B06AC3 /* StatementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailView.swift; sourceTree = "<group>"; };
+		856707692572898A00B06AC3 /* StatementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCell.swift; sourceTree = "<group>"; };
 		856707802572C2CD00B06AC3 /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
 		856707A025730E2600B06AC3 /* InterviewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAPI.swift; sourceTree = "<group>"; };
 		856707A62573182400B06AC3 /* HTTPMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMock.swift; sourceTree = "<group>"; };
@@ -211,10 +211,10 @@
 		85246953256F552F00A81A66 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85246949256F46F800A81A66 /* BaseViewController.swift */,
-				85246917256F38F800A81A66 /* HomeViewController.swift */,
-				855ED2A925720D8D00AD67EE /* CreditCardViewController.swift */,
-				855ED2B125720D9E00AD67EE /* StatementViewController.swift */,
+				853C070F2573D7F5008C82AA /* Statement */,
+				853C070E2573D7EF008C82AA /* CreditCard */,
+				853C070D2573D7DE008C82AA /* Home */,
+				853C070C2573D7D4008C82AA /* Common */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,9 +222,9 @@
 		85246954256F553A00A81A66 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				85246951256F54E300A81A66 /* HomeViewModel.swift */,
-				85670744257270DE00B06AC3 /* CreditCardViewModel.swift */,
-				856707642572881300B06AC3 /* StatementViewModel.swift */,
+				853C07122573D810008C82AA /* Statement */,
+				853C07112573D809008C82AA /* CreditCard */,
+				853C07102573D805008C82AA /* Home */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -232,26 +232,130 @@
 		85246955256F556500A81A66 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				85246956256F561800A81A66 /* HomeWidgetModel.swift */,
-				85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */,
-				855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */,
-				855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */,
-				856707492572713200B06AC3 /* CardDetailModel.swift */,
-				85670759257286F500B06AC3 /* StatementDetailModel.swift */,
+				853C070B2573D7CA008C82AA /* Statement */,
+				853C07042573D7AD008C82AA /* CreditCard */,
+				853C07032573D7A1008C82AA /* Home */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		855233FD2570554B00F1F952 /* Views */ = {
+		853C07032573D7A1008C82AA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85246956256F561800A81A66 /* HomeWidgetModel.swift */,
+				85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */,
+				855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */,
+				855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		853C07042573D7AD008C82AA /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				856707492572713200B06AC3 /* CreditCardModel.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		853C070B2573D7CA008C82AA /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				85670759257286F500B06AC3 /* Statement.swift */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
+		853C070C2573D7D4008C82AA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				85246949256F46F800A81A66 /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		853C070D2573D7DE008C82AA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85246917256F38F800A81A66 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		853C070E2573D7EF008C82AA /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				855ED2A925720D8D00AD67EE /* CreditCardViewController.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		853C070F2573D7F5008C82AA /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				855ED2B125720D9E00AD67EE /* StatementViewController.swift */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
+		853C07102573D805008C82AA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85246951256F54E300A81A66 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		853C07112573D809008C82AA /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				85670744257270DE00B06AC3 /* CreditCardViewModel.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		853C07122573D810008C82AA /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				856707642572881300B06AC3 /* StatementViewModel.swift */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
+		853C07132573D81F008C82AA /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				85BC5DC72571955E00125362 /* HomeCardView.swift */,
 				85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */,
 				855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */,
-				85670737257267AA00B06AC3 /* CardView.swift */,
-				856707542572759800B06AC3 /* CardDetailView.swift */,
-				856707692572898A00B06AC3 /* StatementDetailView.swift */,
 				853C06FE2573D293008C82AA /* HomeHeaderWidgetView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		853C07142573D82B008C82AA /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				856707542572759800B06AC3 /* CreditCardDetailView.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		853C07152573D848008C82AA /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				856707692572898A00B06AC3 /* StatementCell.swift */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
+		855233FD2570554B00F1F952 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				853C07152573D848008C82AA /* Statement */,
+				853C07142573D82B008C82AA /* CreditCard */,
+				853C07132573D81F008C82AA /* Home */,
+				85670737257267AA00B06AC3 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,13 +513,13 @@
 				85BC5DC82571955E00125362 /* HomeCardView.swift in Sources */,
 				855ED2A02572033900AD67EE /* HomeStatementWidgetUIModel.swift in Sources */,
 				85246952256F54E300A81A66 /* HomeViewModel.swift in Sources */,
-				856707552572759800B06AC3 /* CardDetailView.swift in Sources */,
+				856707552572759800B06AC3 /* CreditCardDetailView.swift in Sources */,
 				85BC5DBE2571946700125362 /* HomeHeaderWidgetUIModel.swift in Sources */,
-				8567076A2572898A00B06AC3 /* StatementDetailView.swift in Sources */,
-				8567075A257286F500B06AC3 /* StatementDetailModel.swift in Sources */,
+				8567076A2572898A00B06AC3 /* StatementCell.swift in Sources */,
+				8567075A257286F500B06AC3 /* Statement.swift in Sources */,
 				85670745257270DE00B06AC3 /* CreditCardViewModel.swift in Sources */,
 				855ED2AA25720D8D00AD67EE /* CreditCardViewController.swift in Sources */,
-				8567074A2572713200B06AC3 /* CardDetailModel.swift in Sources */,
+				8567074A2572713200B06AC3 /* CreditCardModel.swift in Sources */,
 				8524694A256F46F800A81A66 /* BaseViewController.swift in Sources */,
 				85246916256F38F800A81A66 /* SceneDelegate.swift in Sources */,
 				85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class CardDetailView: CardView {
+open class CreditCardDetailView: CardView {
     
     private lazy var cardNumber : UILabel = {
         let label = UILabel()

@@ -14,11 +14,11 @@ class CreditCardViewController: BaseViewController {
     var cardDetailViewModel = CardDetailViewModel()
     let pageTitle  = "Cartão"
     
-    private lazy var cardDetailView: CardDetailView = {
+    private lazy var cardDetailView: CreditCardDetailView = {
         let cardNumber :String = cardDetailViewModel.card?.cardNumber ?? ""
         let cardName :String = cardDetailViewModel.card?.cardName ?? ""
         let expirationDate :String = cardDetailViewModel.card?.expirationDate ?? ""
-        let card = CardDetailView(cardNumber: cardNumber, cardName: cardName, expirationDate: expirationDate)
+        let card = CreditCardDetailView(cardNumber: cardNumber, cardName: cardName, expirationDate: expirationDate)
         return card
     }()
     
