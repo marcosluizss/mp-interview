@@ -33,7 +33,7 @@ class StatementViewController: BaseViewController {
         
         self.contraints()
         
-        statementViewModel.fetchStatementDetail{ [weak self] result in
+        statementViewModel.fetchStatement { [weak self] result in
             switch result {
             case .success(_):
                 DispatchQueue.main.async {

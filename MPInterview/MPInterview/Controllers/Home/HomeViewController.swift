@@ -39,7 +39,7 @@ class HomeViewController: BaseViewController {
                 DispatchQueue.main.async {
                     self?.addWidgets()
                 }
-            case .failure(let error):
+            case .failure(_):
                 DispatchQueue.main.async {
                     self?.showError()
                 }

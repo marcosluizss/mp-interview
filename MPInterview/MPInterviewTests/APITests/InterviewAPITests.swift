@@ -10,7 +10,7 @@ import XCTest
 
 @testable import MPInterview
 
-class InterviewAPITest: XCTestCase {
+class InterviewAPITests: XCTestCase {
 
     var httpClient : HTTPClient!
     var interviewAPI : InterviewAPI!
@@ -88,7 +88,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -155,7 +155,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -244,7 +244,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -276,7 +276,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 500, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 500, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -314,7 +314,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -367,7 +367,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -402,7 +402,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 500, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 500, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -444,7 +444,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -486,7 +486,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 400, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -556,7 +556,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -592,7 +592,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 500, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 500, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -634,7 +634,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }
@@ -676,7 +676,7 @@ class InterviewAPITest: XCTestCase {
                 throw HTTPError.invalidURL
             }
             
-            let response = HTTPURLResponse(url: self.homeUrl, statusCode: 400, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)!
             
             return (response,data)
         }

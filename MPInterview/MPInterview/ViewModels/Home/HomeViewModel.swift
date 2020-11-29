@@ -10,11 +10,17 @@ import Foundation
 
 class HomeViewModel {
     var widgets = [HomeWidget]()
+    
+    private let interviewAPI : InterviewAPI
+    
+    init(interviewAPI: InterviewAPI = .shared) {
+       self.interviewAPI = interviewAPI
+    }
 }
 
 extension HomeViewModel {
     func fetchWidgets(completion: @escaping (Result<Bool, Error>) -> Void){
-        InterviewAPI.shared.fetchHomeWidgets(completion: { [weak self] result in
+        interviewAPI.fetchHomeWidgets(completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
                 case .failure(let error):

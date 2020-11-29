@@ -19,6 +19,9 @@
 		85246957256F561800A81A66 /* HomeWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85246956256F561800A81A66 /* HomeWidgetModel.swift */; };
 		853C06FF2573D293008C82AA /* HomeHeaderWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C06FE2573D293008C82AA /* HomeHeaderWidgetView.swift */; };
 		853C072A2573DC34008C82AA /* MPInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C07292573DC33008C82AA /* MPInterviewUITests.swift */; };
+		853C07382573F659008C82AA /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C07372573F659008C82AA /* HomeViewModelTests.swift */; };
+		853C074E2573FCFE008C82AA /* CreditCardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C074D2573FCFE008C82AA /* CreditCardViewModelTests.swift */; };
+		853C0753257400F8008C82AA /* StatementViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C0752257400F8008C82AA /* StatementViewModelTests.swift */; };
 		855ED2902571E34E00AD67EE /* HomeCardWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */; };
 		855ED29B257200AF00AD67EE /* HomeStatementWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */; };
 		855ED2A02572033900AD67EE /* HomeStatementWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */; };
@@ -34,7 +37,7 @@
 		856707812572C2CD00B06AC3 /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707802572C2CD00B06AC3 /* HttpClientTests.swift */; };
 		856707A125730E2600B06AC3 /* InterviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707A025730E2600B06AC3 /* InterviewAPI.swift */; };
 		856707A72573182400B06AC3 /* HTTPMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707A62573182400B06AC3 /* HTTPMock.swift */; };
-		856707AF25731D3400B06AC3 /* InterviewAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707AE25731D3400B06AC3 /* InterviewAPITest.swift */; };
+		856707AF25731D3400B06AC3 /* InterviewAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856707AE25731D3400B06AC3 /* InterviewAPITests.swift */; };
 		85BC5DBE2571946700125362 /* HomeHeaderWidgetUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */; };
 		85BC5DC32571949F00125362 /* HomeCardWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */; };
 		85BC5DC82571955E00125362 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DC72571955E00125362 /* HomeCardView.swift */; };
@@ -76,6 +79,9 @@
 		85246956256F561800A81A66 /* HomeWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWidgetModel.swift; sourceTree = "<group>"; };
 		853C06FE2573D293008C82AA /* HomeHeaderWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidgetView.swift; sourceTree = "<group>"; };
 		853C07292573DC33008C82AA /* MPInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPInterviewUITests.swift; sourceTree = "<group>"; };
+		853C07372573F659008C82AA /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		853C074D2573FCFE008C82AA /* CreditCardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewModelTests.swift; sourceTree = "<group>"; };
+		853C0752257400F8008C82AA /* StatementViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelTests.swift; sourceTree = "<group>"; };
 		855ED28F2571E34E00AD67EE /* HomeCardWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetUIModel.swift; sourceTree = "<group>"; };
 		855ED29A257200AF00AD67EE /* HomeStatementWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetView.swift; sourceTree = "<group>"; };
 		855ED29F2572033900AD67EE /* HomeStatementWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatementWidgetUIModel.swift; sourceTree = "<group>"; };
@@ -91,7 +97,7 @@
 		856707802572C2CD00B06AC3 /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
 		856707A025730E2600B06AC3 /* InterviewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAPI.swift; sourceTree = "<group>"; };
 		856707A62573182400B06AC3 /* HTTPMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMock.swift; sourceTree = "<group>"; };
-		856707AE25731D3400B06AC3 /* InterviewAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAPITest.swift; sourceTree = "<group>"; };
+		856707AE25731D3400B06AC3 /* InterviewAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewAPITests.swift; sourceTree = "<group>"; };
 		85BC5DBD2571946700125362 /* HomeHeaderWidgetUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderWidgetUIModel.swift; sourceTree = "<group>"; };
 		85BC5DC22571949F00125362 /* HomeCardWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardWidgetView.swift; sourceTree = "<group>"; };
 		85BC5DC72571955E00125362 /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
@@ -166,8 +172,9 @@
 			children = (
 				8524692C256F38FA00A81A66 /* Info.plist */,
 				856707A5257317ED00B06AC3 /* Mocks */,
-				856707802572C2CD00B06AC3 /* HttpClientTests.swift */,
-				856707AE25731D3400B06AC3 /* InterviewAPITest.swift */,
+				853C073F2573FC65008C82AA /* ServicesTests */,
+				853C07402573FC83008C82AA /* APITests */,
+				853C07412573FC95008C82AA /* ViewModelTests */,
 			);
 			path = MPInterviewTests;
 			sourceTree = "<group>";
@@ -352,6 +359,32 @@
 				85670737257267AA00B06AC3 /* CardView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		853C073F2573FC65008C82AA /* ServicesTests */ = {
+			isa = PBXGroup;
+			children = (
+				856707802572C2CD00B06AC3 /* HttpClientTests.swift */,
+			);
+			path = ServicesTests;
+			sourceTree = "<group>";
+		};
+		853C07402573FC83008C82AA /* APITests */ = {
+			isa = PBXGroup;
+			children = (
+				856707AE25731D3400B06AC3 /* InterviewAPITests.swift */,
+			);
+			path = APITests;
+			sourceTree = "<group>";
+		};
+		853C07412573FC95008C82AA /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				853C07372573F659008C82AA /* HomeViewModelTests.swift */,
+				853C074D2573FCFE008C82AA /* CreditCardViewModelTests.swift */,
+				853C0752257400F8008C82AA /* StatementViewModelTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		855233FD2570554B00F1F952 /* Views */ = {
@@ -543,9 +576,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				856707AF25731D3400B06AC3 /* InterviewAPITest.swift in Sources */,
+				856707AF25731D3400B06AC3 /* InterviewAPITests.swift in Sources */,
 				856707A72573182400B06AC3 /* HTTPMock.swift in Sources */,
+				853C0753257400F8008C82AA /* StatementViewModelTests.swift in Sources */,
+				853C074E2573FCFE008C82AA /* CreditCardViewModelTests.swift in Sources */,
 				856707812572C2CD00B06AC3 /* HttpClientTests.swift in Sources */,
+				853C07382573F659008C82AA /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

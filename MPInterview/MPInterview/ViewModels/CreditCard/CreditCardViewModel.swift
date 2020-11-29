@@ -8,25 +8,28 @@
 
 import Foundation
 
-class CardDetailViewModel {
+class CreditCardViewModel {
+    var cardId : String?
+    var card : CreditCardModel?
     
-    init(cardId: String? = nil) {
+    private let interviewAPI : InterviewAPI
+    
+    init(cardId: String? = nil, interviewAPI: InterviewAPI = .shared) {
         if let id = cardId {
             self.cardId = id
         }
+        self.interviewAPI = interviewAPI
     }
     
-    var cardId : String?
-    var card : CreditCardModel?
 }
 
-extension CardDetailViewModel {
-    func fetchCardDetail(completion: @escaping (Result<Bool, Error>) -> Void){
+extension CreditCardViewModel {
+    func fetchCard(completion: @escaping (Result<Bool, Error>) -> Void){
         guard let cardId = cardId else {
             completion(.failure(APIResponseError.requestIdInvalid))
             return
         }
-        InterviewAPI.shared.fetchCreditCard(cardId: cardId, completion: { [weak self] result in
+        interviewAPI.fetchCreditCard(cardId: cardId, completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
                 case .failure(let error):

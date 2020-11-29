@@ -10,23 +10,27 @@ import Foundation
 
 class StatementViewModel {
     
-    init(accountId: String? = nil) {
+    var accountId : String?
+    var statement : StatementModel?
+    
+    private let interviewAPI : InterviewAPI
+    
+    init(accountId: String? = nil, interviewAPI: InterviewAPI = .shared) {
         if let id = accountId {
             self.accountId = id
         }
+        self.interviewAPI = interviewAPI
     }
     
-    var accountId : String?
-    var statement : StatementModel?
 }
 
 extension StatementViewModel {
-    func fetchStatementDetail(completion: @escaping (Result<Bool, Error>) -> Void){
+    func fetchStatement(completion: @escaping (Result<Bool, Error>) -> Void){
         guard let accountId = accountId else {
             completion(.failure(APIResponseError.requestIdInvalid))
             return
         }
-        InterviewAPI.shared.fetchAccountStatement(accountId: accountId, completion: { [weak self] result in
+        interviewAPI.fetchAccountStatement(accountId: accountId, completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
                 case .failure(let error):

@@ -11,7 +11,7 @@ import UIKit
 
 class CreditCardViewController: BaseViewController {
     
-    var cardDetailViewModel = CardDetailViewModel()
+    var cardDetailViewModel = CreditCardViewModel()
     let pageTitle  = "Cartão"
     
     private lazy var cardDetailView: CreditCardDetailView = {
@@ -55,7 +55,7 @@ class CreditCardViewController: BaseViewController {
         
         self.view.addSubview(stackView)
             
-        cardDetailViewModel.fetchCardDetail { [weak self] result in
+        cardDetailViewModel.fetchCard { [weak self] result in
             switch result {
             case .success(_):
                 DispatchQueue.main.async {
